@@ -1,0 +1,16 @@
+﻿<Window x:Class="WebExpo.InterfaceGraphique.ResultatsBarreProg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebExpo.InterfaceGraphique"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True"
+        Title="Calculs bayésiens en cours" Height="70" Width="300"
+        Closed="Window_Closed">
+    <Grid>
+        <ProgressBar Minimum="0" Maximum="100" Value="75" Name="ProgIter" Margin="0,0,-0.4,0" />
+        <TextBlock Text="{Binding ElementName=ProgIter,Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Left" Height="22" Margin="133,10,0,0" VerticalAlignment="Top" Width="33" FontSize="16" Foreground="Blue"/>
+    </Grid>
+</Window>

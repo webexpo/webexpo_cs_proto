@@ -1,0 +1,61 @@
+﻿<Window x:Class="WebExpo.InterfaceGraphique.Resultats"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:winformchart="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization" 
+        xmlns:p="clr-namespace:WebExpo.InterfaceGraphique.Properties"
+        Title="{x:Static p:Resources.MarcovHisto}" Height="900" Width="850"
+        WindowState="Minimized" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <WindowsFormsHost Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Height="250" Margin="20,20,0,0" VerticalAlignment="Top" Width="800">
+            <winformchart:Chart x:Name="histoMu" Dock="Left">
+
+                <winformchart:Chart.Series>
+                    <winformchart:Series Name="mu" ChartType="Column" Color="Red" />
+                </winformchart:Chart.Series>
+                <winformchart:Chart.ChartAreas>
+                    <winformchart:ChartArea />
+                </winformchart:Chart.ChartAreas>
+                <winformchart:Chart.Legends>
+                    <winformchart:Legend />
+                </winformchart:Chart.Legends>
+            </winformchart:Chart>
+        </WindowsFormsHost>
+        <WindowsFormsHost Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="250" Margin="20,20,0,0" VerticalAlignment="Top" Width="800">
+            <winformchart:Chart x:Name="histoSigma" Dock="Left">
+                <winformchart:Chart.Series>
+                    <winformchart:Series Name="sigma" ChartType="Column" />
+                </winformchart:Chart.Series>
+                <winformchart:Chart.ChartAreas>
+                    <winformchart:ChartArea />
+                </winformchart:Chart.ChartAreas>
+                <winformchart:Chart.Legends>
+                    <winformchart:Legend />
+                </winformchart:Chart.Legends>
+            </winformchart:Chart>
+        </WindowsFormsHost>
+        <WindowsFormsHost Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Height="250" Margin="20,20,0,0" VerticalAlignment="Top" Width="800">
+            <winformchart:Chart x:Name="histoSigma2" Dock="Left">
+                <winformchart:Chart.Series>
+                    <winformchart:Series Name="sigma" ChartType="Column" />
+                </winformchart:Chart.Series>
+                <winformchart:Chart.ChartAreas>
+                    <winformchart:ChartArea />
+                </winformchart:Chart.ChartAreas>
+                <winformchart:Chart.Legends>
+                    <winformchart:Legend />
+                </winformchart:Chart.Legends>
+            </winformchart:Chart>
+        </WindowsFormsHost>
+    </Grid>
+</Window>

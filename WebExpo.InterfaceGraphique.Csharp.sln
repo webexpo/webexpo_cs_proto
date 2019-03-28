@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebExpo.InterfaceGraphique.Csharp", "WebExpo.InterfaceGraphique.Csharp\WebExpo.InterfaceGraphique.Csharp.csproj", "{172FE59C-64FA-4775-9CC6-6ED35B3672FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webExpoLib", "webExpoLibProject\webExpoLib.csproj", "{EAEF21B2-E7FA-4421-81F7-0D09C9F3C701}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{172FE59C-64FA-4775-9CC6-6ED35B3672FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172FE59C-64FA-4775-9CC6-6ED35B3672FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172FE59C-64FA-4775-9CC6-6ED35B3672FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172FE59C-64FA-4775-9CC6-6ED35B3672FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAEF21B2-E7FA-4421-81F7-0D09C9F3C701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAEF21B2-E7FA-4421-81F7-0D09C9F3C701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAEF21B2-E7FA-4421-81F7-0D09C9F3C701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAEF21B2-E7FA-4421-81F7-0D09C9F3C701}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF1715FB-5BB6-4E76-A6C7-FA650A260069}
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

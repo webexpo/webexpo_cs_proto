@@ -1,0 +1,170 @@
+﻿using System;
+using System.Windows;
+using Zygotine.WebExpo;
+using System.ComponentModel;
+using System.Threading.Tasks;
+
+namespace HistoChaineMarcov
+{
+    /// <summary>
+    /// Logique d'interaction pour Resultats.xaml
+    /// </summary>
+    public partial class Resultats : Window
+    {
+        private ResultatsBarreProg barreProg = new ResultatsBarreProg();
+
+        public Resultats(string[] measures, Window mw = null)
+        {
+            new Resultats(measures, SEGInformedVarModelParameters.GetDefaults(true), new McmcParameters(), 0, 0, mw);
+        }
+        public Resultats(string[] measures, SEGInformedVarModelParameters mp, McmcParameters mcmcParams, Window mw = null)
+        {
+            new Resultats(measures, mp, mcmcParams, 0, 0, mw);
+        }
+        public Resultats(string[] measures, SEGInformedVarModelParameters mp, McmcParameters mcmcParams, double cvMin, double cvMax, Window mw)
+        {
+            InitializeComponent();
+            if (mw != null)
+            {
+                this.Left = mw.Left + mw.Width;
+                this.Top = mw.Top;
+            }
+            Update(measures, mp, mcmcParams, cvMin, cvMax);
+        }
+
+        public void Update(string[] measures, SEGInformedVarModelParameters mp, McmcParameters mcmc, double cvMin = 0, double cvMax = 0)
+        {
+            string mlStr = String.Join("|", measures);
+            if ( cvMin > 0 || cvMax > 0 )
+            {
+                mlStr = "cv(" + (cvMin / 100).ToString().Replace(",", ".") + "," + (cvMax / 100).ToString().Replace(",", ".") + ")|" + mlStr;
+            }
+            MeasureList ml = new MeasureList(mlStr);
+            Model model = new SEGInformedVarModel(measures: ml, specificParams: mp, mcmcParams: mcmc, pastDataSummary: null);
+            if (model.Valid)
+            {
+                barreProg.Update();
+                barreProg.Show();
+
+                BackgroundWorker worker = new BackgroundWorker();
+                worker.WorkerReportsProgress = true;
+                worker.DoWork += Worker_DoWork;
+                worker.ProgressChanged += Worker_ProgressChanged;
+                worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
+                worker.RunWorkerAsync(model);
+            }
+
+            //Le modèle contient un objet résultat dès sa création.
+            ModelResult res = model.Result;
+            /*
+             * Il contient
+             * le nom du modèle
+             * les paramètes mcmc
+             * la chaine des mesures
+             * les paramètres spécifiques
+             * les données historiques (pastData)
+             */
+
+            double[] muChain = res.GetChainByName("muSample");
+            double[] sigmaChain = res.GetChainByName("sdSample");
+
+            int numCategories = 10;
+            //histo.ChartAreas[0].AxisY.Maximum = 8;
+            histoMu.ChartAreas[0].AxisY.Title = histoSigma.ChartAreas[0].AxisY.Title = "Total";
+
+
+            foreach (System.Windows.Forms.DataVisualization.Charting.Series s in histoMu.Series)
+            {
+                s.Points.Clear();
+            }
+            foreach (System.Windows.Forms.DataVisualization.Charting.Series s in histoSigma.Series)
+            {
+                s.Points.Clear();
+            }
+
+            int[] histoMuCount = new int[numCategories];
+            int[] histoSigmaCount = new int[numCategories];
+
+            for ( int i = 0; i < histoMuCount.Length; i++ )
+            {
+                histoMuCount[i] = 0;
+                histoSigmaCount[i] = 0;
+            }
+            double muMin = double.PositiveInfinity, muMax = double.NegativeInfinity;
+            double sigmaMin = double.PositiveInfinity, sigmaMax = double.NegativeInfinity;
+            for (int i = 0; i < muChain.Length; i++)
+            {
+                if (muChain[i] < muMin)
+                {
+                    muMin = muChain[i];
+                }
+                if (muChain[i] > muMax)
+                {
+                    muMax = muChain[i];
+                }
+
+                if (sigmaChain[i] < sigmaMin)
+                {
+                    sigmaMin = sigmaChain[i];
+                }
+                if (sigmaChain[i] > sigmaMax)
+                {
+                    sigmaMax = sigmaChain[i];
+                }
+            }
+
+            for (int i = 0; i < muChain.Length; i++)
+            {
+                ++histoMuCount[getHistoCategory(muChain[i], muMin, muMax, histoMuCount.Length)];
+                ++histoSigmaCount[getHistoCategory(sigmaChain[i], sigmaMin, sigmaMax, histoMuCount.Length)];
+            }
+
+            for (int i = 0; i < histoMuCount.Length; i++)
+            {
+                histoMu.Series["mu"].Points.AddXY(i + 1, histoMuCount[i]);
+                histoSigma.Series["sigma"].Points.AddXY(i + 1, histoSigmaCount[i]);
+            }
+        }
+
+        private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            barreProg.Update(100);
+            Task.Delay(100);
+            barreProg.Hide();
+        }
+
+        private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            barreProg.Update(e.ProgressPercentage);
+        }
+
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            SEGInformedVarModel model = (SEGInformedVarModel) e.Argument;
+            model.Compute(sender as BackgroundWorker);
+        }
+
+        private int getHistoCategory(double val, double min, double max, int length)
+        {
+            double interval = (max - min) / length;
+            double lower = min;
+            for ( int i = 0; i < length; i++ )
+            {
+                bool valInThisCategory = val >= lower;
+                lower += interval;
+                valInThisCategory &= (i == length - 1 ? val <= max : val < lower);
+                if ( valInThisCategory )
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+    }
+}

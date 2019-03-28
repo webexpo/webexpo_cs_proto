@@ -1,0 +1,43 @@
+﻿<Window x:Class="WebExpo.InterfaceGraphique.TableauResNumTravailleurs"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebExpo.InterfaceGraphique"
+        mc:Ignorable="d"
+        xmlns:p="clr-namespace:WebExpo.InterfaceGraphique.Properties"
+        Title="{x:Static p:Resources.IndivWorkerResults}" Height="500" Width="1000">
+    <Grid>
+        <ComboBox Name="WorkerShown" HorizontalAlignment="Left" Height="25" Margin="103,17,0,0" VerticalAlignment="Top" Width="168" SelectionChanged="WorkerShown_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" Height="35" Width="93" FontSize="16" >
+            <Run Text="{x:Static p:Resources.WorkerC}" />
+            <Run Text=":" />
+        </TextBlock>
+        <FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True" Margin="0,50,-0.4,0">
+            <FlowDocumentReader.Resources>
+                <Style TargetType="TableCell">
+                    <Setter Property="TextAlignment" Value="Center"/>
+                </Style>
+            </FlowDocumentReader.Resources>
+            <FlowDocument ColumnWidth="999999">
+                <Table Name="tableauResultats" CellSpacing="6"  FontFamily="Trebuchet MS">
+                    <Table.Columns>
+                        <TableColumn />
+                        <TableColumn />
+                    </Table.Columns>
+                    <!-- 
+      This table includes a single TableRowGroup which hosts 2 rows,
+      each described by a TableRow element.
+    -->
+                    <TableRowGroup>
+                        <TableRow Background="SkyBlue">
+                            <TableCell ColumnSpan="2" TextAlignment="Center">
+                                <Paragraph FontSize="16pt" FontWeight="Bold">Résultats numériques</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentReader>
+    </Grid>
+</Window>

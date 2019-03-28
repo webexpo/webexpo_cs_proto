@@ -1,0 +1,31 @@
+﻿<Window x:Class="WebExpo.InterfaceGraphique.TableauResNum"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebExpo.InterfaceGraphique"
+        xmlns:p="clr-namespace:WebExpo.InterfaceGraphique.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.NumRes}" Height="500" Width="1000">
+    <FlowDocument ColumnWidth="999999">
+        <Table Name="tableauResultats" CellSpacing="6"  FontFamily="Trebuchet MS">
+            <Table.Columns>
+                <TableColumn />
+                <TableColumn />
+            </Table.Columns>
+            <!-- 
+      This table includes a single TableRowGroup which hosts 2 rows,
+      each described by a TableRow element.
+    -->
+            <TableRowGroup>
+                <TableRow Background="SkyBlue">
+                    <TableCell ColumnSpan="2" TextAlignment="Center">
+                        <Paragraph FontSize="16pt" FontWeight="Bold">
+                            <Run Text="{x:Static p:Resources.NumRes}" />
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+            </TableRowGroup>
+        </Table>
+    </FlowDocument>
+</Window>

@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="And" xml:space="preserve">
+    <value>et</value>
+  </data>
+  <data name="APrio" xml:space="preserve">
+    <value>A priori sur</value>
+  </data>
+  <data name="APrioriDist" xml:space="preserve">
+    <value>Distribution a priori sur</value>
+  </data>
+  <data name="APrioriDist2" xml:space="preserve">
+    <value>Distribution a priori</value>
+  </data>
+  <data name="ArithMean" xml:space="preserve">
+    <value>Moyenne arithmétique</value>
+  </data>
+  <data name="ArithSD" xml:space="preserve">
+    <value>Écart-type arithmétique</value>
+  </data>
+  <data name="BetweenWorkers" xml:space="preserve">
+    <value>inter-travailleurs</value>
+  </data>
+  <data name="BurnInChainsCSV" xml:space="preserve">
+    <value>Chaînes «burn-in» (CSV)</value>
+  </data>
+  <data name="BWVariations" xml:space="preserve">
+    <value>Variations inter-travailleurs</value>
+  </data>
+  <data name="CalcRunning" xml:space="preserve">
+    <value>CALCULS EN COURS...</value>
+  </data>
+  <data name="Comma" xml:space="preserve">
+    <value>Virgule</value>
+  </data>
+  <data name="CorrelThresh" xml:space="preserve">
+    <value>Seuil de correlation</value>
+  </data>
+  <data name="CritPercentile" xml:space="preserve">
+    <value>Centile critique</value>
+  </data>
+  <data name="CritPercentilePerc" xml:space="preserve">
+    <value>Centile critique (%)</value>
+  </data>
+  <data name="CSVSep" xml:space="preserve">
+    <value>Séparateur CSV pour les chaînes MCMC</value>
+  </data>
+  <data name="Exceedance" xml:space="preserve">
+    <value>Fraction de dépassement</value>
+  </data>
+  <data name="Exceedance1" xml:space="preserve">
+    <value>Fraction de</value>
+  </data>
+  <data name="Exceedance2" xml:space="preserve">
+    <value>dépassement limite (%)</value>
+  </data>
+  <data name="GeomMean" xml:space="preserve">
+    <value>Moyenne géométrique</value>
+  </data>
+  <data name="GeomSD" xml:space="preserve">
+    <value>Écart-type géométrique</value>
+  </data>
+  <data name="GES" xml:space="preserve">
+    <value>Groupe d'exposition similiare</value>
+  </data>
+  <data name="GroupArithMean" xml:space="preserve">
+    <value>Moyenne arithmétique de groupe</value>
+  </data>
+  <data name="GroupGeomMean" xml:space="preserve">
+    <value>Moyenne géométrique de groupe</value>
+  </data>
+  <data name="IndivWorkerResults" xml:space="preserve">
+    <value>Résultats numériques - Travailleurs individuels</value>
+  </data>
+  <data name="InitVals" xml:space="preserve">
+    <value>Valeurs initiales</value>
+  </data>
+  <data name="InterpretSettings" xml:space="preserve">
+    <value>Paramètres d'interpretation</value>
+  </data>
+  <data name="InvalidValue" xml:space="preserve">
+    <value>Valeur invalide</value>
+  </data>
+  <data name="LogNorm" xml:space="preserve">
+    <value>Log-normale</value>
+  </data>
+  <data name="MarcovChainsCSV" xml:space="preserve">
+    <value>Chaînes Markov (CSV)</value>
+  </data>
+  <data name="MarcovHisto" xml:space="preserve">
+    <value>Histogrammes des chaînes MCMC</value>
+  </data>
+  <data name="MCMCSettings" xml:space="preserve">
+    <value>Paramètres MCMC</value>
+  </data>
+  <data name="MeasErr" xml:space="preserve">
+    <value>Erreur de mesure</value>
+  </data>
+  <data name="MonitorBurnIn" xml:space="preserve">
+    <value>Surveiller burn-in</value>
+  </data>
+  <data name="NBurnIn" xml:space="preserve">
+    <value>n burn-in</value>
+  </data>
+  <data name="NIter" xml:space="preserve">
+    <value>n itérations</value>
+  </data>
+  <data name="NoError" xml:space="preserve">
+    <value>Aucune</value>
+  </data>
+  <data name="Norm" xml:space="preserve">
+    <value>Normale</value>
+  </data>
+  <data name="NThinning" xml:space="preserve">
+    <value>n thinning</value>
+  </data>
+  <data name="NumHistoClasses1" xml:space="preserve">
+    <value>Nombre de classes</value>
+  </data>
+  <data name="NumHistoClasses2" xml:space="preserve">
+    <value>des histogrammes</value>
+  </data>
+  <data name="NumRes" xml:space="preserve">
+    <value>Résultats numériques</value>
+  </data>
+  <data name="OEL" xml:space="preserve">
+    <value>Valeur limite d'exposition</value>
+  </data>
+  <data name="Of" xml:space="preserve">
+    <value>sur</value>
+  </data>
+  <data name="OutputSettings" xml:space="preserve">
+    <value>Paramètres sortie</value>
+  </data>
+  <data name="OverExpo" xml:space="preserve">
+    <value>surexpo</value>
+  </data>
+  <data name="OverExpoProbThresh1" xml:space="preserve">
+    <value>Seuil de probabilité de</value>
+  </data>
+  <data name="OverExpoProbThresh2" xml:space="preserve">
+    <value>surexposition individuelle</value>
+  </data>
+  <data name="OverExpoRiskPerc" xml:space="preserve">
+    <value>Risque de surexposition (%)</value>
+  </data>
+  <data name="ProbCred1" xml:space="preserve">
+    <value>Probabilité pour les</value>
+  </data>
+  <data name="ProbCred2" xml:space="preserve">
+    <value>intervalles de crédibilité (%)</value>
+  </data>
+  <data name="ProbGreaterThan" xml:space="preserve">
+    <value>superiéure.à</value>
+  </data>
+  <data name="RbRatioCov" xml:space="preserve">
+    <value>Couverture du ratio Rb</value>
+  </data>
+  <data name="SemiColon" xml:space="preserve">
+    <value>Point-virgule</value>
+  </data>
+  <data name="StartCalculations" xml:space="preserve">
+    <value>Lancer calculs</value>
+  </data>
+  <data name="StatModel" xml:space="preserve">
+    <value>Modèle statistique</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Prototype WebExpo [C#] - Analyses GES + variations inter-travailleurs</value>
+  </data>
+  <data name="Uniform" xml:space="preserve">
+    <value>Uniforme</value>
+  </data>
+  <data name="ValidRange" xml:space="preserve">
+    <value>Bornes</value>
+  </data>
+  <data name="VarCoeff" xml:space="preserve">
+    <value>Coefficient de variation (%)</value>
+  </data>
+  <data name="WithData" xml:space="preserve">
+    <value>Avec données externes</value>
+  </data>
+  <data name="WithinWorkers" xml:space="preserve">
+    <value>(intra-travailleurs)</value>
+  </data>
+  <data name="Worker" xml:space="preserve">
+    <value>travailleur</value>
+  </data>
+  <data name="WorkerC" xml:space="preserve">
+    <value>Travailleur</value>
+  </data>
+</root>
