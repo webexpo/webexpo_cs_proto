@@ -1,4 +1,4 @@
-# C# prototype repository
+# C# Prototype Repository
 
 This repository contains the code underlying the WEBEXPO C# prototype, allowing to use it as a starting point to build their own applications.
 
