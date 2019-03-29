@@ -1,8 +1,8 @@
-# CSharp prototype repository
+# C# prototype repository
 
 This repository contains the code underlying the WEBEXPO C# prototype, allowing to use it as a starting point to build their own applications.
 
-A functioning prototype can be downloaded from this [dropbox link](https://www.dropbox.com/s/3hhsxnvn8jtphav/WebexpoPrototypeCsharp.zip?dl=0). Simply dowload and extract the zip archive into a folder of your choice and double click the WebExpo.InterfaceGraphique.Csharp.exe file. The prototype includes a bilingual French/English infrastructure. The French version can be launched double clikcing the WebExpo.InterfaceGraphique.Csharp.fr.bat file.
+he prototype includes a bilingual French/English infrastructure. The French version can be launched double clikcing the WebExpo.InterfaceGraphique.Csharp.fr.bat file.
 
 The scientific report describing the principles and details of the calculations allowed by the WEBEXPO algorithms is not public yet, but some details can be found [here](http://www.expostats.ca/site/en/webexpoen.html). The abstract of the scientific report can be found below.
 
