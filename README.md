@@ -1,8 +1,8 @@
-# C# Prototype Repository
+# WEBEXPO C# Prototype
 
-This repository contains the code underlying the WEBEXPO C# prototype, allowing to use it as a starting point to build their own applications.
+This repository contains the code underlying the WEBEXPO C# prototype. The prototpe demonstrates how to build applications on top of the [WEBEXPO C# library](https://github.com/webexpo/webexpo_cs_lib).
 
-he prototype includes a bilingual French/English infrastructure. The French version can be launched double clikcing the WebExpo.InterfaceGraphique.Csharp.fr.bat file.
+The prototype includes a bilingual French/English infrastructure. The French version can be launched double clikcing the WebExpo.InterfaceGraphique.Csharp.fr.bat file.
 
 The scientific report describing the principles and details of the calculations allowed by the WEBEXPO algorithms is not public yet, but some details can be found [here](http://www.expostats.ca/site/en/webexpoen.html). The abstract of the scientific report can be found below.
 
