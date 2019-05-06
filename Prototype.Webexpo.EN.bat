@@ -1,0 +1,1 @@
+@start "" ".\WebExpo.InterfaceGraphique.Csharp\bin\Release\WebExpo.InterfaceGraphique.Csharp.exe"
