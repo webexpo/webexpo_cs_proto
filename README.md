@@ -3,7 +3,7 @@
 This repository contains the code underlying the WEBEXPO C# prototype. The prototpe demonstrates how to build applications on top of the [WEBEXPO C# library](https://github.com/webexpo/webexpo_cs_lib). The prototype includes a bilingual French/English infrastructure.
 
 To run the prototype:
-- Download the files as a ZIP file (by clicking the green "Clone or download ZIP" button)
+- Download the files as a ZIP file (by clicking the green "Clone or download" button)
 - Extract the zip file to a folder on your local drive
 - Open the folder
 - Double click on either ``Prototype.Webexpo.EN.bat`` or ``Prototype.Webexpo.FR.bat`` to run the prototype in English or French
