@@ -291,7 +291,7 @@ namespace WebExpo.InterfaceGraphique
             string meStr = "";
             if ( (bool)me_CV.IsChecked && !(MERange.Minimum == 0 && MERange.Maximum == 0))
             {
-                meStr = "cv(" + ShowDouble(MERange.Minimum/100) + "," + ShowDouble(MERange.Maximum/100) + ")|";
+                meStr = "cv(" + ShowDouble(MERange.Minimum/100) + "~" + ShowDouble(MERange.Maximum/100) + ")|";
             }
 
             PastDataSummary PD = new PastDataSummary();
