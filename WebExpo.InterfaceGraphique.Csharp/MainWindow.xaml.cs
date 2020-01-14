@@ -284,7 +284,6 @@ namespace WebExpo.InterfaceGraphique
         private Model buildModel()
         {
             Model model = null;
-            bool mustStandardise = (bool) DistLogNormale.IsChecked;
             Range mer = meRange;
 
             string mlStr = String.Join("|", Entrs.Observations.Split(new String[] { CR }, StringSplitOptions.RemoveEmptyEntries));
@@ -301,19 +300,10 @@ namespace WebExpo.InterfaceGraphique
             }
 
             bool preBuildError = false;
-            MeasureList ml = new MeasureList(meStr + mlStr);
+            MeasureList ml = new MeasureList(meStr + mlStr, Entrs.VLE);
             
             if ( !preBuildError )
             {
-                if (mustStandardise)
-                {
-                    ml.StandardiserObservations(Entrs.VLE);
-                    if (PD.Defined)
-                    {
-                        PD.Mean -= Math.Log(Entrs.VLE);
-                    }
-                }
-
                 if ((bool)UseModelGES.IsChecked)
                 {
                     if ((bool)DistriAP_Expostats.IsChecked)

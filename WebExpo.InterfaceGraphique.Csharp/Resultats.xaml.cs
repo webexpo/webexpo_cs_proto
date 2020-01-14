@@ -80,15 +80,6 @@ namespace WebExpo.InterfaceGraphique
                     double[] muChain = res.GetChainByName("muSample");
                     double[] sigmaChain = res.GetChainByName("sdSample");
 
-                    if (DistrLogNormal)
-                    {
-                        for (int i = 0; i < muChain.Length; i++)
-                        {
-                            muChain[i] += Math.Log(entrees.VLE);
-                        }
-
-                    }
-
                     if (KeepBurnin)
                     {
                         double[] muBChain = res.GetChainByName("muBurnin");
@@ -131,22 +122,6 @@ namespace WebExpo.InterfaceGraphique
                     {
                         string muChainId = "mu_" + workerId + "Sample";
                         workerMuChains.Add(workerId, res.GetChainByName(muChainId));
-                    }
-
-                    if (DistrLogNormal)
-                    {
-                        for (int i = 0; i < muOverallChain.Length; i++)
-                        {
-                            muOverallChain[i] += Math.Log(entrees.VLE);
-                        }
-
-                        foreach (string workerId in workerIds)
-                        {
-                            for (int i = 0; i < workerMuChains[workerId].Length; i++)
-                            {
-                                workerMuChains[workerId][i] += Math.Log(entrees.VLE);
-                            }
-                        }
                     }
 
                     ResultatsNumeriques rng = new ResultatsNumeriques(muOverallChain, sigmaBetweenChain, entrees, DistrLogNormal, burninChains, CsvSep, sigmaWithinChain);
